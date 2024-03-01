@@ -1,7 +1,7 @@
-use std::fmt;
-use std::time::SystemTime;
-
 pub mod log {
+    use std::fmt;
+    use std::time::SystemTime;
+
     static mut PREFIX: &'static str = "default";
 
     pub fn set_prefix(prefix: &'static str) {
@@ -43,5 +43,3 @@ pub mod log {
         }
     }
 }
-
-fn main() {}
