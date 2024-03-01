@@ -42,4 +42,32 @@ pub mod log {
             );
         }
     }
+    // 定义宏
+    #[macro_export]
+    macro_rules! info {
+        ($($arg:tt)*) => {{
+            $crate::log::info(format_args!($($arg)*));
+        }};
+    }
+
+    #[macro_export]
+    macro_rules! error {
+        ($($arg:tt)*) => {{
+            $crate::log::error(format_args!($($arg)*));
+        }};
+    }
+
+    #[macro_export]
+    macro_rules! warning {
+        ($($arg:tt)*) => {{
+            $crate::log::warning(format_args!($($arg)*));
+        }};
+    }
+
+    #[macro_export]
+    macro_rules! debug {
+        ($($arg:tt)*) => {{
+            $crate::log::debug(format_args!($($arg)*));
+        }};
+    }
 }
