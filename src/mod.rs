@@ -43,3 +43,5 @@ pub mod log {
         }
     }
 }
+
+fn main() {}
