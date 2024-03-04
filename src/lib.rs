@@ -31,11 +31,12 @@ pub mod log {
         let time = now.duration_since(SystemTime::UNIX_EPOCH)
             .unwrap_or_default()
             .as_secs();
+        let timestamp = chrono::NaiveDateTime::from_timestamp_opt(time as i64, 0).unwrap();
 
         unsafe {
             println!(
                 "{} [{}-{}] {}",
-                chrono::NaiveDateTime::from_timestamp(time as i64, 0),
+                timestamp,
                 PREFIX,
                 level,
                 fmt
